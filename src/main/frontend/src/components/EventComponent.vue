@@ -37,11 +37,16 @@ defineProps({
 <template>
   <div class="card mb" id="mainContainer">
     <div class="row g-0" id="childrenContainer">
-      <!-- <div class="col-md" id="containerCheckbox">
+      <div class="col-md" id="containerCheckbox-active">
         <div class="chekbox">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"> 
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value=""
+            id="flexCheckDefault"
+          />
         </div>
-    </div> -->
+      </div>
       <div class="col-md" id="imgContainer">
         <img src="../assets/resources/cometcon.svg" alt="Cometcon Image" />
       </div>
@@ -60,10 +65,8 @@ defineProps({
         <div class="card-body" id="btnmaxpeopleContainer">
           <div id="divBtnSign">
             <button class="buttonSign">Sign up</button>
-
-            <!-- para que aparezcan los estilos del boton clickeado = button-click -->
-            <!-- <button class="using-button">Using</button> -->
-            <!-- <span class="full">FULL</span> -->
+            <button class="using-button" id="using-button-active">Using</button>
+            <span class="full" id="full-active">FULL</span>
           </div>
           <div id="maxPeople">{{ signed_users }}/{{ max_users }}</div>
         </div>
@@ -73,32 +76,4 @@ defineProps({
 </template>
 <style scoped>
 @import "../assets/css/eventComponent.css";
-
-@media (max-width: 768px) {
-  img {
-    width: 35%;
-    height: 70%;
-  }
-  #imgContainer {
-    width: 100%;
-    height: 50%;
-    display: flex;
-    justify-content: center;
-  }
-  #childrenContainer {
-    width: 100%;
-  }
-  #btnmaxpeopleContainer {
-    display: flex;
-  }
-  #date {
-    width: auto;
-    display: flex;
-  }
-  #maxPeople {
-    margin-left: 15px;
-    display: flex;
-    align-items: center;
-  }
-}
 </style>

@@ -19,5 +19,5 @@
   </nav>
 </template>
 <style scoped>
-@import '../assets/css/paginationComponent.css';
+@import "../assets/css/paginationComponent.css";
 </style>

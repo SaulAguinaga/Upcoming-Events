@@ -30,7 +30,6 @@
           ></button>
         </div>
         <div class="modal-body" id="formBody">
-
           <form class="row g-3">
             <div class="col-md-12">
               <label for="inputTitle" class="form-label">Title</label>
@@ -52,7 +51,9 @@
               />
             </div>
             <div class="col-md-12">
-              <label for="inputDescription" class="form-label">Description</label>
+              <label for="inputDescription" class="form-label"
+                >Description</label
+              >
               <input type="text" class="form-control" id="inputDescription" />
             </div>
             <div class="col-md-12">
@@ -80,8 +81,6 @@
               </div>
             </div>
           </form>
-
-
         </div>
       </div>
     </div>
@@ -90,5 +89,4 @@
 <style scoped>
 @import "../assets/css/styleForm.css";
 @import "../assets/css/NavBarComponent.css";
-
 </style>
