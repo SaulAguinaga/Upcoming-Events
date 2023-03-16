@@ -5,9 +5,7 @@
     class="log-in-button"
     data-bs-toggle="modal"
     data-bs-target="#staticLogIn"
-  >
-    Log In
-  </button>
+  ></button>
 
   <div
     class="modal fade"
