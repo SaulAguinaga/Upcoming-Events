@@ -20,7 +20,7 @@ public class SecurityConfiguration {
                         .logoutUrl("/api/logout")
                         .deleteCookies("JSESSIONID"))
                 .authorizeRequests(auth -> auth
-                        // .antMatchers("/api/dogs").hasRole("USER")
+                        .antMatchers("/api/events/**").permitAll()
                         // .antMatchers("/api/cats").hasRole("ADMIN")
                         .anyRequest().permitAll())
                 .headers(header -> header.frameOptions().disable())

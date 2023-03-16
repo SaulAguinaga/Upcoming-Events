@@ -43,7 +43,7 @@ defineProps({
         </div>
     </div> -->
       <div class="col-md" id="imgContainer">
-        <img src="../assets/resources/cometcon.svg" alt="Cometcon Image" />
+        <img :src="image" alt="Cometcon Image" />
       </div>
       <div class="col-md-9">
         <div class="card-body">
@@ -59,8 +59,8 @@ defineProps({
       <div class="col-sm-1" id="thirdColumn">
         <div class="card-body" id="btnmaxpeopleContainer">
           <div id="divBtnSign">
-            <button class="buttonSign">Sign up</button>
-
+            <!-- <button class="buttonSign">Sign up</button> -->
+            <button class="buttonSign">Edit<PopUpEditForm/></button>
             <!-- para que aparezcan los estilos del boton clickeado = button-click -->
             <!-- <button class="using-button">Using</button> -->
             <!-- <span class="full">FULL</span> -->

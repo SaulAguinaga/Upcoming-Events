@@ -13,8 +13,8 @@ onBeforeMount(async () => {
 });
 </script>
 <template>
-  <Header />
-  <SliderChecking />
+  <Header/>
+  <!-- <SliderChecking /> -->
   <SliderComponent />
   <div v-for="event in store.Events" :key="event">
     <EventComponent
@@ -28,6 +28,7 @@ onBeforeMount(async () => {
       :title="event.title"
     />
   </div>
-  <PaginationComponent />
+  <!-- <PaginationComponent /> -->
+
 </template>
 <style scoped></style>
