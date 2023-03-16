@@ -116,6 +116,7 @@ function resetForm(){
               />
             </div>
             <div class="col-md-12">
+
               <label for="inputDescription" class="form-label">Description</label>
               <input type="text" class="form-control" id="inputDescription" v-model="newEvent.description" />
             </div>
@@ -144,8 +145,6 @@ function resetForm(){
               </div>
             </div>
           </form>
-
-
         </div>
       </div>
     </div>
@@ -154,5 +153,4 @@ function resetForm(){
 <style scoped>
 @import "../assets/css/styleForm.css";
 @import "../assets/css/NavBarComponent.css";
-
 </style>
