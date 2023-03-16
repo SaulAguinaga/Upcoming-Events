@@ -48,7 +48,7 @@ defineProps({
         </div>
       </div>
       <div class="col-md" id="imgContainer">
-        <img src="../assets/resources/cometcon.svg" alt="Cometcon Image" />
+        <img :src="image" alt="Cometcon Image" />
       </div>
       <div class="col-md-9">
         <div class="card-body">
@@ -64,6 +64,7 @@ defineProps({
       <div class="col-sm-1" id="thirdColumn">
         <div class="card-body" id="btnmaxpeopleContainer">
           <div id="divBtnSign">
+            <button class="buttonSign">Edit<PopUpEditForm/></button>
             <button class="buttonSign">Sign up</button>
             <button class="using-button" id="using-button-active">Using</button>
             <span class="full" id="full-active">FULL</span>
