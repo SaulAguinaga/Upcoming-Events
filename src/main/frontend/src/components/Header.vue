@@ -25,9 +25,10 @@ let userInfo = localStorage.getItem("username")
       </button>
 
       <div class="collapse navbar-collapse justify-content-end" id="opciones">
-        <div class="front-page-container" id="login-view">
+        <button class="front-page-container" id="login-view">
+          
           <PopUpLogin />
-        </div>
+        </button>
 
         <!-- <div class="user-view-container" id="user-view">
           <button class="home-button" id="button-on">Home</button>

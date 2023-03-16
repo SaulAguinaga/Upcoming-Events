@@ -24,7 +24,7 @@ public class DeleteEventService {
         List<User> usersList = userRepository.findAll();
 
         for (User user : usersList) {
-            subscribeService.signOut(id_event, user.getId());
+            subscribeService.signIn(id_event, user.getId());
         }
 
         eventRepository.deleteById(id_event);     

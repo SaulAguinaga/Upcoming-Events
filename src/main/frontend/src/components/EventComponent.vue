@@ -1,38 +1,26 @@
 <script setup>
-defineProps({
-  available: {
-    type: Boolean,
-    default: null,
+import { ref } from 'vue';
+
+let switchButton=ref(true);
+let reactive = ref(1);
+
+let props = defineProps({
+  event:{
+    type: Object,
   },
-  date: {
-    type: String,
-    default: null,
-  },
-  description: {
-    type: String,
-    default: null,
-  },
-  id: {
-    type: Number,
-    default: null,
-  },
-  image: {
-    type: String,
-    default: null,
-  },
-  max_users: {
-    type: Number,
-    default: null,
-  },
-  signed_users: {
-    type: Number,
-    default: null,
-  },
-  title: {
-    type: String,
-    default: null,
-  },
+  user:{
+    type: Object
+  }
 });
+
+
+const singup =async (id_event, id_user)=>{
+  const response = await fetch(`http://localhost:8080/api/subscribe/${id_event}/${id_user}`,{
+    method: "PUT"
+  });
+};
+
+
 </script>
 <template>
   <div class="card mb" id="mainContainer">
@@ -43,30 +31,28 @@ defineProps({
         </div>
     </div> -->
       <div class="col-md" id="imgContainer">
-        <img src="../assets/resources/cometcon.svg" alt="Cometcon Image" />
+        <img v-bind:src='event.image' alt="Cometcon Image" />
       </div>
       <div class="col-md-9">
         <div class="card-body">
           <div class="d-flex" id="titleCard">
-            <p class="card-title">{{ title }}</p>
-            <p id="date">{{ date }}</p>
+            <p class="card-title">{{ event.title}}</p>
+            <p id="date">{{ event.date }}</p>
           </div>
           <p class="card-text">
-            {{ description }}
+            {{ event.description }}
           </p>
         </div>
       </div>
       <div class="col-sm-1" id="thirdColumn">
         <div class="card-body" id="btnmaxpeopleContainer">
           <div id="divBtnSign">
-            <button class="buttonSign">Sign up</button>
-
-            <!-- para que aparezcan los estilos del boton clickeado = button-click -->
-            <!-- <button class="using-button">Using</button> -->
-            <!-- <span class="full">FULL</span> -->
+              <button v-if="switchButton==true" class="buttonSign" @click="singup(event.id, user.id), switchButton=false, event.signed_users++" >Sign up</button>
+              <button v-if="switchButton==false" class="using-button" @click="singup(event.id, user.id), switchButton=true, event.signed_users--">Sign Out</button>
           </div>
-          <div id="maxPeople">{{ signed_users }}/{{ max_users }}</div>
-        </div>
+          <span v-if="event.signed_users==event.max_users" class="full">FULL</span>
+          <div id="maxPeople">{{ event.signed_users }}/{{ event.max_users }}</div>
+        </div> 
       </div>
     </div>
   </div>
