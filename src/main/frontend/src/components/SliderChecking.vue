@@ -1,6 +1,10 @@
 <script setup>
 import SliderComponent from './SliderComponent.vue';
-
+defineProps({
+  user:{
+    type: Object
+  }
+});
 </script>
 <template>
   <button

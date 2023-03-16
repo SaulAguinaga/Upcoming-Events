@@ -44,9 +44,12 @@ watch([userName, password], ([userName, password]) => {
 
 </script>
 <template>
-  <button type="button" class="log-in-button" data-bs-toggle="modal" data-bs-target="#staticLogIn">
-    Log In
-  </button>
+  <button
+    type="button"
+    class="log-in-button"
+    data-bs-toggle="modal"
+    data-bs-target="#staticLogIn"
+  >Log In</button>
 
   <div class="modal fade" id="staticLogIn" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">

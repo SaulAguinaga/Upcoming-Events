@@ -5,29 +5,28 @@ import PaginationComponent from "../components/PaginationComponent.vue";
 import SliderChecking from "../components/SliderChecking.vue";
 import { onBeforeMount } from "vue";
 import { useEventsStore } from "../stores/EventsStore";
+import { useUsersStore } from "../stores/UsersStore";
 import EventComponent from "../components/EventComponent.vue";
 
 const store = useEventsStore();
+
+const userStore = useUsersStore();
 onBeforeMount(async () => {
-  await store.fetchEvents();
+  await userStore.fetchUsers(1);
+ await store.fetchEvents();
 });
 </script>
 <template>
   <Header />
   <SliderChecking />
   <SliderComponent />
-  <div v-for="event in store.Events" :key="event">
+  <div v-for="event of store.Events">
     <EventComponent
-      :available="event.available"
-      :date="event.date"
-      :description="event.description"
-      :id="event.id"
-      :image="event.image"
-      :max_users="event.max_users"
-      :signed_users="event.signed_users"
-      :title="event.title"
+      :event="event"
+      :user="userStore.Users"
     />
   </div>
+
   <PaginationComponent />
 </template>
 <style scoped></style>
