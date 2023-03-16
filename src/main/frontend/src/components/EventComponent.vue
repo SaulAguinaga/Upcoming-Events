@@ -25,13 +25,8 @@ const singup =async (id_event, id_user)=>{
 <template>
   <div class="card mb" id="mainContainer">
     <div class="row g-0" id="childrenContainer">
-      <!-- <div class="col-md" id="containerCheckbox">
-        <div class="chekbox">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"> 
-        </div>
-    </div> -->
       <div class="col-md" id="imgContainer">
-        <img v-bind:src='event.image' alt="Cometcon Image" />
+        <img :src="event.image" :alt="title" />
       </div>
       <div class="col-md-9">
         <div class="card-body">
@@ -59,32 +54,4 @@ const singup =async (id_event, id_user)=>{
 </template>
 <style scoped>
 @import "../assets/css/eventComponent.css";
-
-@media (max-width: 768px) {
-  img {
-    width: 35%;
-    height: 70%;
-  }
-  #imgContainer {
-    width: 100%;
-    height: 50%;
-    display: flex;
-    justify-content: center;
-  }
-  #childrenContainer {
-    width: 100%;
-  }
-  #btnmaxpeopleContainer {
-    display: flex;
-  }
-  #date {
-    width: auto;
-    display: flex;
-  }
-  #maxPeople {
-    margin-left: 15px;
-    display: flex;
-    align-items: center;
-  }
-}
 </style>

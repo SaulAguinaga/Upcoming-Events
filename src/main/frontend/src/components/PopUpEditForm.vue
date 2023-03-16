@@ -1,10 +1,10 @@
 <script setup>
-function changeColor() {
-  let button = document.querySelector(".button");
-  if (button.className == "button") {
-    button.className = "button-click"
-  }
-}
+// function changeColor() {
+//   let button = document.querySelector(".button");
+//   if (button.className == "button") {
+//     button.className = "button-click";
+//   }
+// }
 </script>
 <template>
   <button
@@ -39,11 +39,10 @@ function changeColor() {
           ></button>
         </div>
         <div class="modal-body" id="formBody">
-
           <form class="row g-3">
             <div class="col-md-12">
-              <label for="inputTitle" class="form-label">Title</label>
-              <input type="text" class="form-control" id="inputTitle" />
+              <label for="inputTitle" class="form-label"> Title </label>
+              <input type="text" class="form-control" id="inputTitle" placeholder="title" />
             </div>
 
             <div class="col-12">
@@ -61,7 +60,9 @@ function changeColor() {
               />
             </div>
             <div class="col-md-12">
-              <label for="inputDescription" class="form-label">Description</label>
+              <label for="inputDescription" class="form-label"
+                >Description</label
+              >
               <input type="text" class="form-control" id="inputDescription" />
             </div>
             <div class="col-md-12">
@@ -89,8 +90,6 @@ function changeColor() {
               </div>
             </div>
           </form>
-
-
         </div>
       </div>
     </div>
@@ -98,6 +97,6 @@ function changeColor() {
 </template>
 <style scoped>
 @import "../assets/css/styleForm.css";
-@import '../assets/css/eventComponent.css';
+@import "../assets/css/eventComponent.css";
 @import "../assets/css/NavBarComponent.css";
 </style>

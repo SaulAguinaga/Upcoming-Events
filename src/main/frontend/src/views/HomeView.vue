@@ -1,12 +1,10 @@
 <script setup>
-import SliderComponent from "../components/SliderComponent.vue";
 import Header from "../components/Header.vue";
-import PaginationComponent from "../components/PaginationComponent.vue";
-import SliderChecking from "../components/SliderChecking.vue";
+import SliderComponent from "../components/SliderComponent.vue";
+import EventComponent from "../components/EventComponent.vue";
 import { onBeforeMount } from "vue";
 import { useEventsStore } from "../stores/EventsStore";
 import { useUsersStore } from "../stores/UsersStore";
-import EventComponent from "../components/EventComponent.vue";
 
 const store = useEventsStore();
 
@@ -17,8 +15,7 @@ onBeforeMount(async () => {
 });
 </script>
 <template>
-  <Header />
-  <SliderChecking />
+  <Header></Header>
   <SliderComponent />
   <div v-for="event of store.Events">
     <EventComponent

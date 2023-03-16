@@ -1,10 +1,6 @@
-
-
-
 <script setup>
 import SliderComponent from "../components/SliderComponent.vue";
-import HeaderAdmin from "../components/HeaderUser.vue";
-import PaginationComponent from "../components/PaginationComponent.vue";
+import HeaderAdmin from "../components/HeaderAdmin.vue";
 import SliderChecking from "../components/SliderChecking.vue";
 import { onBeforeMount } from "vue";
 import { useEventsStore } from "../stores/EventsStore";
@@ -21,16 +17,9 @@ onBeforeMount(async () => {
   <SliderComponent />
   <div v-for="event in store.Events" :key="event">
     <EventComponent
-      :available="event.available"
-      :date="event.date"
-      :description="event.description"
-      :id="event.id"
-      :image="event.image"
-      :max_users="event.max_users"
-      :signed_users="event.signed_users"
-      :title="event.title"
+      :event="event"
     />
   </div>
-  <PaginationComponent />
+
 </template>
 <style scoped></style>

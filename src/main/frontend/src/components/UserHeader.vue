@@ -1,8 +1,6 @@
 <script setup>
+import PopUpForm from "./PopUpForm.vue";
 import PopUpLogin from "./PopUpLogin.vue";
-import PopUpRegister from "./PopUpRegister.vue";
-let userInfo = localStorage.getItem("username")
-
 </script>
 <template>
   <header>
@@ -21,25 +19,15 @@ let userInfo = localStorage.getItem("username")
         data-bs-toggle="collapse"
         data-bs-target="#opciones"
       >
-        <span class="navbar-toggler-icon" id="pp"></span>
+        <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse justify-content-end" id="opciones">
-        <div class="front-page-container" id="login-view">
-          <PopUpLogin />
-          <PopUpRegister/>
-        </div>
-
-        <!-- <div class="user-view-container" id="user-view">
+        <div class="user-view-container" id="user-view">
           <button class="home-button" id="button-on">Home</button>
           <button class="my-events-button" id="button-off">My events</button>
           <p class="hi-user">Hi, Username</p>
-        </div> -->
-
-        <!-- <div class="admin-view-container" id="admin-view">
-          <PopUpForm />
-          <p class="hi-user">Hi, Username</p>
-        </div> -->
+        </div>
       </div>
     </div>
   </header>
