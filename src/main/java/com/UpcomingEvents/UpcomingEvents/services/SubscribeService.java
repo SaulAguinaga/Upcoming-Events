@@ -1,5 +1,7 @@
 package com.UpcomingEvents.UpcomingEvents.services;
 
+
+
 import org.springframework.stereotype.Service;
 
 import com.UpcomingEvents.UpcomingEvents.models.Event;
@@ -20,22 +22,32 @@ public class SubscribeService {
         this.eventRepository = eventRepository;
     }
 
-    public void signIn(SubscribePayload subscribe) {
-        User user = userRepository.findById(subscribe.getId_user()).get();
-        Event event = eventRepository.findById(subscribe.getId_event()).get();
-        if (event != null && !user.getEvents().contains(event) && event.isAvailable() && event.getSigned_users()<event.getMax_users()) {
+    public void signIn(Long id_event, Long id_user) {
+        User user = userRepository.findById(id_user).get();
+        Event event = eventRepository.findById(id_event).get();
+
+        if (!user.getEvents().contains(event)) {
             event.setSigned_users(event.getSigned_users()+1);
             user.getEvents().add(event);
         }
-        if (event == null) {
-            //message: event not found
+        else if(user.getEvents().contains(event)) {
+            this.signOut(event, user);
         }
-        if (user.getEvents().contains(event)) {
-            //message: already signed
+        else{
+            userRepository.save(user);
         }
-        if (event.isAvailable() == false) {
-            //message: event not available
-        }
+        
+        userRepository.save(user);
+    }
+
+    public void signOut(Event event, User user) {
+        // Event event = eventRepository.findById(id_event).get();
+        // User user = userRepository.findById(id_user).get();
+
+        // if (user.getEvents().contains(event)) {
+            event.setSigned_users(event.getSigned_users()-1);
+            user.getEvents().remove(event);
+        // }
         userRepository.save(user);
     }
     

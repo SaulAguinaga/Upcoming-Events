@@ -1,6 +1,8 @@
 <script setup>
 import PopUpForm from "./PopUpForm.vue";
 import PopUpLogin from "./PopUpLogin.vue";
+let userInfo = localStorage.getItem("username")
+
 </script>
 <template>
   <header>
@@ -23,20 +25,22 @@ import PopUpLogin from "./PopUpLogin.vue";
       </button>
 
       <div class="collapse navbar-collapse justify-content-end" id="opciones">
-        <div class="front-page-container" id="login-view">
+        <button class="front-page-container" id="login-view">
+          
           <PopUpLogin />
-        </div>
+        </button>
 
-        <div class="user-view-container" id="user-view">
+        <!-- <div class="user-view-container" id="user-view">
           <button class="home-button" id="button-on">Home</button>
           <button class="my-events-button" id="button-off">My events</button>
-          <p class="hi-user">Hi, Username</p>
-        </div>
+          <p class="hi-user">Hi, {{userInfo}}</p>
+        
+        </div> -->
 
-        <div class="admin-view-container" id="admin-view">
+        <!-- <div v-if="userInfo==null" class="admin-view-container" id="admin-view">
           <PopUpForm />
-          <p class="hi-user">Hi, Username</p>
-        </div>
+          <p class="hi-user">Hi, {{userInfo}}</p> -->
+        <!-- </div> -->
       </div>
     </div>
   </header>
